@@ -1,0 +1,189 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;}
+{\colortbl;\red255\green255\blue255;\red251\green0\blue17;\red38\green255\blue255;\red251\green0\blue255;
+\red13\green10\blue14;\red21\green0\blue131;\red14\green94\blue1;\red100\green96\blue2;\red102\green0\blue22;
+\red201\green0\blue211;\red18\green95\blue108;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c0\c6659;\cssrgb\c8814\c100000\c100000;\cssrgb\c100000\c12989\c100000;
+\cssrgb\c5799\c4228\c6757;\cssrgb\c11094\c8737\c58583;\cssrgb\c1292\c43144\c0;\cssrgb\c46995\c44502\c0;\cssrgb\c48224\c2499\c11300;
+\cssrgb\c83866\c9336\c86102;\cssrgb\c5743\c44665\c49939;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww37900\viewh21300\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf2 1. Introduction. \
+The "Bailing Programmers".\
+Definitions and Terminology.\
+Asynchronous.\
+Concurrency.\
+Uniprocessor and Multiprocessor.\
+Parallelism.\
+Thread Safety and Reentrancy.\
+Concurrency Control Functions.\
+Asynchronous Programming is Intuitive...\
+. . . Because Unix is Asynchronous.\
+. . . Because the World is Asynchronous.\
+About the Examples in This Book.\
+Asynchronous Programming, by Example.\
+the Baseline, Synchronous Version.\
+A Version Using Multiple Processes.\
+A Version Using Multiple Threads.\
+Summary.\
+Benefits of Threading.\
+Parallelism.\
+Concurrency.\
+Programming Model.\
+Costs of Threading.\
+Computing Overhead.\
+Programming Discipline.\
+Harder to Debug.\
+To Thread or Not to Thread?\
+POSIX Thread Concepts.\
+Architectural Overview.\
+Types and Interfaces.\
+Checking for Errors.\
+\cf0 \
+\
+\cf3 2. Threads. \
+Creating and Using Threads.\
+The Life of a Thread.\
+Creation.\
+Startup.\
+Running and Blocking.\
+Termination.\
+Recycling.\
+\cf0 \
+\
+\cf4 3. Synchronization. \
+Invariants, Critical Sections, and Predicates.\
+Mutexes.\
+Creating and Destroying a Mutex.\
+Locking and Unlocking a Mutex.\
+Nonblocking Mutex Locks.\
+Using Mutexes for Atomicity.\
+Sizing a Mutex to Fit the Job.\
+Using More Than One Mutex.\
+Lock Hierarchy.\
+Lock Chaining.\
+Condition Variables.\
+Creating and Destroying a Condition Variable.\
+Waiting on a Condition Variable.\
+Waking Condition Variable Waiters.\
+One Final Alarm Program.\
+Memory Visibility Between Threads.\
+\cf0 \
+\
+\cf5 4. A Few Ways to Use Threads. \
+Pipeline.\
+Work Crew.\
+Client/Server.\
+\cf0 \
+\
+\cf6 5. Advanced Threaded Programming. \
+One-Time Initialization.\
+Attributes Objects.\
+Mutex Attributes.\
+Condition Variable Attributes.\
+Thread Attributes.\
+Cancellation.\
+Deferred Cancelability.\
+Asynchronous Cancelability.\
+Cleaning Up.\
+Thread-Specific Data.\
+Creating Thread-Specific Data.\
+Using Thread-Specific Data.\
+Using Destructor Functions.\
+Realtime Scheduling.\
+POSIX Realtime Options.\
+Scheduling Policies and Priorities.\
+Contention Scope and Allocation Domain.\
+Problems With Realtime Scheduling.\
+Priority-Aware Mutexes.\
+Priority Ceiling Mutexes.\
+Priority Inheritance Mutexes.\
+Threads and Kernel Entities.\
+Many-to-One (User Level).\
+One-to-One (Kernel Level).\
+Many-to-Few (Two Level).\
+\cf0 \
+\
+\cf7 6. Posix Adjusts to Threads. \
+Fork.\
+Fork Handlers.\
+Exec.\
+Process Exit.\
+Stdio.\
+Flockfile and Funlockfile.\
+Getchar_Unlocked and Putchar_Unlocked.\
+Thread-Safe Functions.\
+User and Terminal Identification.\
+Directory Searching.\
+String Token.\
+Time Representation.\
+Random Number Generation.\
+Group and User Database.\
+Signals.\
+Signal Actions.\
+Signal Masks.\
+Pthread_Kill.\
+Sigwait and Sigwaitinfo.\
+Sigev_Thread.\
+Semaphores: Synchronizing With a Signal-Catching Function.\cf0 \
+\
+\
+\cf8 7. "Real Code". \
+Extended Synchronization.\
+Barriers.\
+Read-Write Locks.\
+Work Queue Manager.\
+But What About Existing Libraries?\
+Modifying Libraries to Be Thread-Safe.\
+Living With Legacy Libraries.\cf0 \
+\
+\
+\cf9 8. Hints to Avoid Debugging. \
+Avoiding Incorrect Code.\
+Avoid Relying on "Thread Inertia".\
+Never Bet Your Mortgage on a Thread Race.\
+Cooperate to Avoid Deadlocks.\
+Beware of Priority Inversion.\
+Never Share Condition Variables Between Predicates.\
+Sharing Stacks and Related Memory Corrupters.\
+Avoiding Performance Problems.\
+Beware of Concurrent Serialization.\
+Use the Right Number of Mutexes.\
+Too Many Mutexes Will Not Help.\
+Never Fight Over Cache Lines.\
+\cf0 \
+\
+\cf10 9. Posix Threads Mini-Reference. \
+POSIX 1003.1cn1995 Options.\
+POSIX 1003.1cn1995 Limits.\
+POSIX 1003.1cn1995 Interfaces.\
+Error Detection and Reporting.\
+Use of Void* Type.\
+Threads.\
+Mutexes.\
+Condition Variables.\
+Cancellation.\
+Thread-Specific Data.\
+Realtime Scheduling.\
+Fork Handlers.\
+Stdio.\
+Thread-Safe Functions.\
+Signals.\
+Semaphores.\
+\cf0 \
+\
+\cf11 10. Future Standardization. \
+X/Open Xsh5 [Unix98].\
+POSIX Options for XSH5.\
+Mutex Type.\
+Set Concurrency Level.\
+Stack Guard Size.\
+Parallel I/O.\
+Cancellation Points.\
+POSIX 1003.1j.\
+Barriers.\
+Read-Write Locks.\
+Spinlocks.\
+Condition Variable Wait Clock.\
+Thread Abort.}
