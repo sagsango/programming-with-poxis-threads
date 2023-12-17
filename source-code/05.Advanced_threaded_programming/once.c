@@ -20,6 +20,7 @@ void once_init_routine (void)
 {
     int status;
 
+    printf("once_init_routine(): gointo init the mutex\n");
     status = pthread_mutex_init (&mutex, NULL);
     if (status != 0)
         err_abort (status, "Init Mutex");

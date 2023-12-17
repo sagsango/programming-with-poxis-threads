@@ -197,13 +197,18 @@ int main (int argc, char *argv[])
      */
     if (argc > 2)
         yield_flag = atoi (argv[2]);
+
     status = pthread_create (
         &forward, NULL, lock_forward, NULL);
+
     if (status != 0)
         err_abort (status, "Create forward");
+
     status = pthread_create (
         &backward, NULL, lock_backward, NULL);
+
     if (status != 0)
         err_abort (status, "Create backward");  
+
     pthread_exit (NULL);
 }

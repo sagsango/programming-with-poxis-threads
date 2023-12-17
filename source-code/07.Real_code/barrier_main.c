@@ -33,11 +33,14 @@ void *thread_routine (void *arg)
 {
     thread_t *self = (thread_t*)arg;    /* Thread's thread_t */
     int in_loop, out_loop, count, status;
+    pthread_t id = pthread_self();
     
     /*
      * Loop through OUTLOOPS barrier cycles.
      */
     for (out_loop = 0; out_loop < OUTLOOPS; out_loop++) {
+	printf("tid[%p] waiting for inner_loop inside the oueter_loop[%d] .\n", id, out_loop);
+	fflush(stdout);
         status = barrier_wait (&barrier);
         if (status > 0)
             err_abort (status, "Wait on barrier");
@@ -50,6 +53,8 @@ void *thread_routine (void *arg)
             for (count = 0; count < ARRAY; count++)
                 self->array[count] += self->increment;
 
+ 	printf("tid[%p] waiting after inner_loop to outof the oueter_loop[%d].\n", id, out_loop);
+	fflush(stdout);
         status = barrier_wait (&barrier);
         if (status > 0)
             err_abort (status, "Wait on barrier");

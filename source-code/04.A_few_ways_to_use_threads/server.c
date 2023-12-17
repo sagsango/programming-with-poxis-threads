@@ -43,7 +43,8 @@ typedef struct tty_server_tag {
 
 tty_server_t tty_server = {
     NULL, NULL, 0,
-    PTHREAD_MUTEX_INITIALIZER, PTHREAD_COND_INITIALIZER};
+    PTHREAD_MUTEX_INITIALIZER, PTHREAD_COND_INITIALIZER
+};
 
 /*
  * Main program data

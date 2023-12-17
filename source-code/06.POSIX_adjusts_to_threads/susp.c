@@ -293,6 +293,7 @@ thread_routine (void *arg)
                 buffer, "Thread %02d: %d\n",
                 number, i);
             write (1, buffer, strlen (buffer));
+	    fflush(stdout);
         }
 
         sched_yield ();

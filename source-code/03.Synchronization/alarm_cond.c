@@ -161,8 +161,10 @@ int main (int argc, char *argv[])
 
     status = pthread_create (
         &thread, NULL, alarm_thread, NULL);
+
     if (status != 0)
         err_abort (status, "Create alarm thread");
+
     while (1) {
         printf ("Alarm> ");
         if (fgets (line, sizeof (line), stdin) == NULL) exit (0);

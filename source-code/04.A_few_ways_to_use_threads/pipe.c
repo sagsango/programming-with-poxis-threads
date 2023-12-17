@@ -17,8 +17,8 @@
  */
 typedef struct stage_tag {
     pthread_mutex_t     mutex;          /* Protect data */
-    pthread_cond_t      avail;          /* Data available */
-    pthread_cond_t      ready;          /* Ready for data */
+    pthread_cond_t      avail;          /* Data available for consumption*/
+    pthread_cond_t      ready;          /* Ready for data to take in the buffer*/
     int                 data_ready;     /* Data present */
     long                data;           /* Data to process */
     pthread_t           thread;         /* Thread for stage */

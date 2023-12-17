@@ -37,8 +37,10 @@ void *thread_routine (void *arg)
             if (status != 0)
                 err_abort (status, "Restore cancel");
         } else
-            if ((counter % 1000) == 0)
+            if ((counter % 1000) == 0) {
+		printf("thread_routine(): counter: %d\n", counter);
                 pthread_testcancel ();
+	    }
     }
 }
 

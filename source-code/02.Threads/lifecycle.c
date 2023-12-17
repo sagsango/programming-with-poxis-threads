@@ -12,6 +12,7 @@
  */
 void *thread_routine (void *arg)
 {
+    printf("thread_routine(): \n");
     return arg;
 }
 

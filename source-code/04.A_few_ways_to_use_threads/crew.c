@@ -78,14 +78,18 @@ void *worker_routine (void *arg)
     if (entry == NULL)
         errno_abort ("Allocating dirent");
     
+    DPRINTF (("Crew %d waiting for lock\n", mine->index));
     status = pthread_mutex_lock (&crew->mutex);
     if (status != 0)
         err_abort (status, "Lock crew mutex");
+
+    DPRINTF (("Crew %d waiting for work\n", mine->index));
 
     /*
      * There won't be any work when the crew is created, so wait
      * until something's put on the queue.
      */
+
     while (crew->work_count == 0) {
         status = pthread_cond_wait (&crew->go, &crew->mutex);
         if (status != 0)

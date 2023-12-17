@@ -79,3 +79,10 @@ int main (int argc, char *argv[])
         err_abort (status, "Create thread 2");
     pthread_exit (NULL);
 }
+
+/*
+Thread-specific data keys in POSIX threads (pthreads) provide a way to
+associate thread-specific data with individual threads. Each thread 
+can have its own unique value associated with a particular key. This 
+is useful in scenarios where you want to maintain per-thread data or context.
+*/

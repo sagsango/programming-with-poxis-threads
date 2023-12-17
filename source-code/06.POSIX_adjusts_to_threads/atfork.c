@@ -20,6 +20,7 @@ void fork_prepare (void)
 {
     int status;
 
+    printf ("fork_prepare() enter\n");
     /*
      * Lock the mutex in the parent before creating the child,
      * to ensure that no other thread can lock it (or change any
@@ -28,6 +29,7 @@ void fork_prepare (void)
     status = pthread_mutex_lock (&mutex);
     if (status != 0)
         err_abort (status, "Lock in prepare handler");
+    printf ("fork_prepare() exit\n");
 }
 
 /*
@@ -37,13 +39,14 @@ void fork_prepare (void)
 void fork_parent (void)
 {
     int status;
-
+    printf ("fork_parent() enter\n");
     /*
      * Unlock the mutex in the parent after the child has been created.
      */
     status = pthread_mutex_unlock (&mutex);
     if (status != 0)
         err_abort (status, "Unlock in parent handler");
+    printf ("fork_parent() exit\n");
 }
 
 /*
@@ -58,10 +61,12 @@ void fork_child (void)
      * Update the file scope "self_pid" within the child process, and unlock
      * the mutex.
      */
+    printf ("fork_child() enter\n");
     self_pid = getpid ();
     status = pthread_mutex_unlock (&mutex);
     if (status != 0)
         err_abort (status, "Unlock in child handler");
+    printf ("fork_child() exit\n");
 }
 
 /*
@@ -109,6 +114,7 @@ int main (int argc, char *argv[])
             err_abort (status, "Register fork handlers");
     }
     self_pid = getpid ();
+    printf("main() : taking lock\n");
     status = pthread_mutex_lock (&mutex);
     if (status != 0)
         err_abort (status, "Lock mutex");
@@ -120,6 +126,7 @@ int main (int argc, char *argv[])
     if (status != 0)
         err_abort (status, "Create thread");
     sleep (5);
+    printf("main() : releasing lock\n");
     status = pthread_mutex_unlock (&mutex);
     if (status != 0)
         err_abort (status, "Unlock mutex");

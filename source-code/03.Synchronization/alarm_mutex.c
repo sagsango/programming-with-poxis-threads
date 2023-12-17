@@ -103,8 +103,11 @@ void *alarm_thread (void *arg)
         if (sleep_time > 0)
             sleep (sleep_time);
         else
-            sched_yield ();
+	    sched_yield ();
 
+/*
+       sched_yield()  causes  the calling thread to relinquish the CPU.  The thread is moved to the end of the
+       queue for its static priority and a new thread gets to run. */
         /*
          * If a timer expired, print the message and free the
          * structure.

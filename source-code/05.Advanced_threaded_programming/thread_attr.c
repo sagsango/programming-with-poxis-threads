@@ -16,7 +16,11 @@
  */
 void *thread_routine (void *arg)
 {
-    printf ("The thread is here\n");
+    int n = 10;
+    while (n--) {
+    	printf ("The thread is here\n");
+	sleep(1);
+    }
     return NULL;
 }
 

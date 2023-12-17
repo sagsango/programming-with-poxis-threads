@@ -11,7 +11,7 @@
 #include <sched.h>
 #include "errors.h"
 
-#define THREADS 5
+#define THREADS 25
 
 /*
  * Structure describing each thread.
@@ -46,7 +46,7 @@ void *thread_routine (void *arg)
         self->id, &my_policy, &my_param);
     if (status != 0)
         err_abort (status, "Get sched");
-    printf ("thread_routine %d running at %s/%d\n",
+    printf ("thread_routine() %d running at %s/%d\n",
         self->index,
         (my_policy == SCHED_FIFO ? "FIFO"
             : (my_policy == SCHED_RR ? "RR"

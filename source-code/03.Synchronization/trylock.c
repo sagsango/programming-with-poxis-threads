@@ -102,19 +102,28 @@ int main (int argc, char *argv[])
 #endif
 
     end_time = time (NULL) + 60;        /* Run for 1 minute */
+
     status = pthread_create (
         &counter_thread_id, NULL, counter_thread, NULL);
+
     if (status != 0)
         err_abort (status, "Create counter thread");
+
     status = pthread_create (
         &monitor_thread_id, NULL, monitor_thread, NULL);
+
     if (status != 0)
         err_abort (status, "Create monitor thread");
+
     status = pthread_join (counter_thread_id, NULL);
+
     if (status != 0)
         err_abort (status, "Join counter thread");
+
     status = pthread_join (monitor_thread_id, NULL);
+
     if (status != 0)
         err_abort (status, "Join monitor thread");
+
     return 0;
 }

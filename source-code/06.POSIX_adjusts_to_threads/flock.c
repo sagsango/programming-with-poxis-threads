@@ -33,7 +33,9 @@ void *prompt_routine (void *arg)
         if (len > 0 && string[len-1] == '\n')
             string[len-1] = '\0';
     }
+    fflush(stdout);
     funlockfile (stdout);
+    sleep(3);
     funlockfile (stdin);
     return (void*)string;
 }
@@ -53,32 +55,40 @@ int main (int argc, char *argv[])
     DPRINTF (("Setting concurrency level to 4\n"));
     thr_setconcurrency (4);
 #endif
+
     status = pthread_create (
         &thread1, NULL, prompt_routine, "Thread 1> ");
     if (status != 0)
         err_abort (status, "Create thread");
+
     status = pthread_create (
         &thread2, NULL, prompt_routine, "Thread 2> ");
     if (status != 0)
         err_abort (status, "Create thread");
+
     status = pthread_create (
         &thread3, NULL, prompt_routine, "Thread 3> ");
     if (status != 0)
         err_abort (status, "Create thread");
+
     status = pthread_join (thread1, &string);
     if (status != 0)
         err_abort (status, "Join thread");
+
     printf ("Thread 1: \"%s\"\n", (char*)string);
     free (string);
+
     status = pthread_join (thread2, &string);
     if (status != 0)
         err_abort (status, "Join thread");
     printf ("Thread 2: \"%s\"\n", (char*)string);
     free (string);
+
     status = pthread_join (thread3, &string);
     if (status != 0)
         err_abort (status, "Join thread");
     printf ("Thread 3: \"%s\"\n", (char*)string);
     free (string);
+
     return 0;
 }

@@ -22,8 +22,8 @@ void *thread_routine (void *arg)
 {
     DPRINTF (("thread_routine starting\n"));
     for (counter = 0; ; counter++)
-        if ((counter % 1000) == 0) {
-            DPRINTF (("calling testcancel\n"));
+        if ((counter % 100000000) == 0) {
+            DPRINTF (("calling testcancel, %d\n", counter));
             pthread_testcancel ();
         }
 }
