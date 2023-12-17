@@ -1,9 +1,10 @@
 NOTE:
-	Chapter 5 and 7 are good to revisite.
-	Chapter 7: Intro to how to write realword solutions.
-
-	We got the idea from operating systems implemetation that
+	1.Chapter 5 and 7 are good to revisite.
+	2.Chapter 7: Intro to how to write realword solutions.
+	3.We got the idea from operating systems implemetation that
 	how all the functionality of thread would be implemented.
 	Mostly - thread, coroutine, signals implementations.
+	4.remeber the clone() system call.
+	5.remeber we are having glibc support. 
 TODO:
 	Write a summary of evey program.
