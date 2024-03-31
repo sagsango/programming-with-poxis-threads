@@ -58,6 +58,7 @@ void *thread_routine (void *arg)
     control.counter++;
 
     while (control.busy) {
+	/* XXX: This line have nothing to do with cancle. Its just normal way of thread waiting on a condition, after taking the lock.*/
         status = pthread_cond_wait (&control.cv, &control.mutex);
         if (status != 0)
             err_abort (status, "Wait on condition");

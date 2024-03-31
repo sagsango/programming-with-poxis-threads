@@ -63,6 +63,7 @@ void *identity_key_get (void)
         status = pthread_setspecific (identity_key, (void*)value);
         if (status != 0)
             err_abort (status, "Set TSD");
+	printf("pthread_setspecific() for: %p\n", pthread_self());
     }
     return value;
 }

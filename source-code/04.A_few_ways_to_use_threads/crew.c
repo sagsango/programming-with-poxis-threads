@@ -1,4 +1,12 @@
 /*
+	pthread_cond_notify():		notify one thread out of all waiting threads
+	pthread_cond_broadcst():	notify all threads, who are waiting.
+	
+	Take care of lost wakeups
+*/
+
+	
+/*
  * crew.c
  *
  * Demonstrate a work crew implementing a simple parallel search
@@ -464,7 +472,7 @@ int main (int argc, char *argv[])
     int status;
 
     if (argc < 3) {
-        fprintf (stderr, "Usage: %s string path\n", argv[0]);
+        fprintf (stderr, "Usage: %s search-string path\n", argv[0]);
         return -1;
     }
 

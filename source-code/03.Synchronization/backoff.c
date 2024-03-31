@@ -165,6 +165,11 @@ int main (int argc, char *argv[])
     pthread_t forward, backward;
     int status;
 
+    if (argc == 1 || strcmp(argv[1], "--help") == 0) {
+	printf("%s <backoff:0=off, 1=on> <yield-flag:-1=sleep, 0=off, 1=on>\n", argv[0]);
+	return 0;
+    }
+
 #ifdef sun
     /*
      * On Solaris 2.5, threads are not timesliced. To ensure

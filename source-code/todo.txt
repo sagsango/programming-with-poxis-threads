@@ -1,5 +1,5 @@
 NOTE:
-	1.Chapter 5 and 7 are good to revisite.
+	1.Chapter 4, 5 and 7 are good to revisite.
 	2.Chapter 7: Intro to how to write realword solutions.
 	3.We got the idea from operating systems implemetation that
 	how all the functionality of thread would be implemented.

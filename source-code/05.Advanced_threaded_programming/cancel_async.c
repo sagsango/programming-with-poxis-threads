@@ -62,9 +62,12 @@ void *thread_routine (void *arg)
         /*
          * Compute the matrix product of matrixa and matrixb.
          */
+	DPRINTF (("Before pthread_setcanceltype () \n"));	
         status = pthread_setcanceltype (
                 PTHREAD_CANCEL_ASYNCHRONOUS,
                 &cancel_type);
+	DPRINTF (("After pthread_setcanceltype () \n"));
+
         if (status != 0)
             err_abort (status, "Set cancel type");
         for (i = 0; i < SIZE; i++)
