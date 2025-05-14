@@ -15,7 +15,7 @@ void *thread_routine (void *arg)
     return arg;
 }
 
-main (int argc, char *argv[])
+int main (int argc, char *argv[])
 {
     pthread_t thread_id;
     void *thread_result;

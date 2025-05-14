@@ -5,7 +5,7 @@
  * wait for each alarm to expire.
  */
 #include <sys/types.h>
-#include <wait.h>
+#include <sys/wait.h>
 #include "errors.h"
 
 int main (int argc, char *argv[])
