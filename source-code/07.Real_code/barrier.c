@@ -1,4 +1,8 @@
 /*
+ * XXX:
+ *  Implement your own barrier
+ */
+/*
  * barrier.c
  *
  * This file implements the "barrier" synchronization construct.
