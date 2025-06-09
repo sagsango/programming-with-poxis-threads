@@ -1,4 +1,9 @@
 /*
+ *
+ * XXX:
+ *  This alarm is the most optimized one
+ */
+/*
  * alarm_cond.c
  *
  * This is an enhancement to the alarm_mutex.c program, which
