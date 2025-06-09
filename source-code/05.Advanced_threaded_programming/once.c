@@ -32,7 +32,16 @@ void once_init_routine (void)
 void *thread_routine (void *arg)
 {
     int status;
-
+    /*
+     * TODO:
+     *  What if first thread is executing long once_init_routine
+     *  (means lets say once_init_routine have sleep(512))
+     *  does other threads after the first one wait for the first
+     *  thread to complete?
+     *
+     *
+     *  YES - This is insured by pthread_once
+     */
     status = pthread_once (&once_block, once_init_routine);
     if (status != 0)
         err_abort (status, "Once init");
