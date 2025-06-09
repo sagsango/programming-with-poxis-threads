@@ -1,4 +1,9 @@
 /*
+ *
+ * XXX:
+ *  This is how we cn design rw lock
+ */
+/*
  * rwlock.c
  *
  * This file implements the "read-write lock" synchronization
